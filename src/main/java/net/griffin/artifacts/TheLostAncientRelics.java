@@ -2,6 +2,7 @@ package net.griffin.artifacts;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.griffin.artifacts.registry.ModBlocks;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,6 +20,7 @@ public class TheLostAncientRelics implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Loading The Lost Ancient Relics");
+		ModBlocks.registerBlocks();
 	}
 }
