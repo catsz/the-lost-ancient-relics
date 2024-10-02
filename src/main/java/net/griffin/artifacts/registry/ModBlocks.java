@@ -5,6 +5,7 @@ import net.griffin.artifacts.TheLostAncientRelics;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.ExperienceDroppingBlock;
+import net.minecraft.block.MapColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -15,11 +16,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
-    public static final Block ARKANIUM_STONE_ORE = registerBlock("arkanium_stone_ore", new ExperienceDroppingBlock(UniformIntProvider.create(5, 10), AbstractBlock.Settings.create().strength(3f, 3f).requiresTool().sounds(BlockSoundGroup.STONE)));
-    public static final Block ARKANIUM_DEEPSLATE_ORE = registerBlock("arkanium_deepslate_ore", new ExperienceDroppingBlock(UniformIntProvider.create(6, 12), AbstractBlock.Settings.create().strength(4.5f, 3f).requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
+    public static final Block ARKANIUM_STONE_ORE = registerBlock("arkanium_stone_ore", new ExperienceDroppingBlock(UniformIntProvider.create(5, 10), AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).strength(3f, 3f).requiresTool().sounds(BlockSoundGroup.STONE)));
+    public static final Block ARKANIUM_DEEPSLATE_ORE = registerBlock("arkanium_deepslate_ore", new ExperienceDroppingBlock(UniformIntProvider.create(6, 12), AbstractBlock.Settings.create().mapColor(MapColor.DEEPSLATE_GRAY).strength(4.5f, 3f).requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
 
     public static void registerBlocks() {
-        TheLostAncientRelics.LOGGER.info("Registering blocks");
+        TheLostAncientRelics.LOGGER.info("Registering " + TheLostAncientRelics.MOD_ID + " Items");
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(ARKANIUM_STONE_ORE);
